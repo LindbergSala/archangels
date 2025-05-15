@@ -6,8 +6,11 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
+// Routers
 app.use('/api/astartes', require('./routes/astartes'));
+app.use('/api/gear', require('./routes/gear'));
+app.use('/api/missions', require('./routes/missions'));
 
 app.listen(port, () => {
-  console.log(`Archangels-API körs på http://localhost:${port}`);
+  console.log(`🚀 API körs på http://localhost:${port}`);
 });
