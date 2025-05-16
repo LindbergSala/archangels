@@ -24,5 +24,7 @@ CREATE TABLE missions (
   mission_name TEXT,
   date TEXT,
   success BOOLEAN,
+  location TEXT,
+  objective TEXT,
   FOREIGN KEY (marine_id) REFERENCES astartes(id)
 );
