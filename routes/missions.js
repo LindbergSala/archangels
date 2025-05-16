@@ -6,9 +6,9 @@ const db = require('../db');
 router.get('/', async (req, res) => {
   try {
     const result = await db.query(`
-      SELECT m.*, a.name AS marine_name
+      SELECT m.*, a.name AS astartes_name
       FROM missions m
-      JOIN astartes a ON m.marine_id = a.id
+      JOIN astartes a ON m.astartesid = a.id
     `);
     res.json(result.rows);
   } catch (err) {
@@ -16,5 +16,7 @@ router.get('/', async (req, res) => {
     res.status(500).json({ error: 'Serverfel' });
   }
 });
+
+router.post('/', async (req, res) => )
 
 module.exports = router;
